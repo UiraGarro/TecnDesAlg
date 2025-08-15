@@ -1,0 +1,145 @@
+Livros Adotados no Curso:
+
+1° C como programar sexta edição
+2° Fundamentos da programação de computadores
+3° Algoritmos em linguagem C
+
+Ambiente de desenvolvimento:
+
+1° Code Blocks
+2° VS Code
+
+Palavras reservadas:
+    auto
+    default
+    float
+    register
+    struct
+    break
+    do
+    for
+    return
+    switch
+    case
+    double
+    goto
+    short
+    typedef
+    volatile
+    char
+    else
+    if
+    signed
+    union
+    while
+    sizeof
+    unsigned
+    enum
+    int
+    const
+    continue
+    extern
+    void
+    static
+    long
+
+Tipos de dados primitivos:
+
+char: um byte que armazena o código de um caractere do conjunto de carateres local, também pode armazenar números inteiros.
+ex: Alfabeto, digitos e caracteres especiais
+obs: O espaço é considerado caracter especial/ devem ser ultilizadas aspas simples
+
+float: numero inteiro
+
+double: um numero real com precisão dupla
+
+logico?: C não possui tipo logico especifico. Entretanto, qualquer tipo pode representar um valor
+
+Modificadores de tipos: alteram algumas características dos tipos básicos para adequá-los a necessidades específicas;
+
+Modificadores:
+
+signed: indica numero com sinal(inteiros e caracteres)
+
+unsigned: numeros apenas positivos(inteiros e caracteres)
+
+long: aumenta abrangência(inteiros e reais)
+
+short: reduz a abrangência(inteiros)
+
+Variáveis:
+
+Palavras reservadas não podem ser nomes de Variáveis
+
+Na formação do identificador só podem ser utilizados:
+°Dígitos, letras(tanto maiúsculas quanto minúsculas)e o caractere de sublinha(_);
+°O identificador deve começar sempre com uma letra ou caractere de sublinha;
+°Apenas os 31 primeiros caracteres são considerados;
+
+Case sensitive
+
+° Corretos:
+
+Contador
+Teste23
+Alto_Paraiso
+__sizeint
+
+Incorretos
+
+
+Declaração de variáveis:
+Tipo_variável lista_de_variaveis;
+
+exemplos:
+int x, y, z;
+float f;
+unsigned int u;
+long double df;
+char c='A'; /*variavel definida e iniciada*/
+
+Pode ser declarado em qualquer parte do código:
+recomenda-se no início da função
+
+Mascara de formatação
+Símbolo de or cento seguido de uma letra:
+
+%c - caractere
+
+%d - inteiros com sinal
+
+%u - inteiros sem sinal
+
+%f - 
+
+%lf -
+
+%e -
+
+%x -
+
+%s -
+
+\a bip
+
+\b backspace
+
+\n nova linha
+
+\r return
+
+Função Scan Format ou,
+scanf():
+
+Lê dados de entrada(teclado)e os armazena em uma variável.
+
+Assinatura:
+    int scanf(char * format, lista_variaveis);
+
+A variável a ser lida deve ser colocada como parâmetro da função, deve ser passado o endereço dessa variável
+
+Exercício de Fixação
+
+Escreva um programa em C para ler separadamente três valores: um número inteiro, um número real e um string, e apresentar separadamente cada valor lido.
+
+Modifique o programa para ler os três valores em um só scanf() e apresentá-los em um só printf()
