@@ -1,0 +1,90 @@
+Estruturas Condicionais
+
+° Permite a escolha do grupo de ações a ser executado quando determina condição é ou não satisfeita.
+
+exemplo:
+
+if(<condição>){
+    bloco de instruções1;
+}
+else{
+    bloco de instruções2;
+}
+
+exemplo2:
+
+int main(){
+
+    float nota;
+
+printf("Digite sua media:\n");
+scanf("%f", &nota);
+
+if (nota>=7){
+    printf("aprovado por media\n");
+}
+else{
+    printf("final\n");
+    }
+}
+
+exemplo3:
+
+int main(){
+    int num;
+
+    printf("digite um numero:\n");
+    scanf("%d", &num);
+
+    if(num%2 == 0){
+        printf("numero par\n", num);
+    
+    } else {
+        printf("numero impar\n", num);
+    return 0
+    }
+}
+
+°Multiplas opções:
+
+scanf("%d", &op);
+
+switch (op){
+    case 1:
+    <comando 1>
+}
+
+exemplo:
+
+int main(){
+
+    int dia;
+
+    printf("Digite um número de 1 a 7 para o dia da semana");
+    scanf("%d", &dia);
+
+    switch(dia)
+    {
+    case 1:
+        printf("Domingo");
+        break;
+    case 2:
+    prinf("Segunda-feira");
+        break;
+    case 3:
+        printf("Terça-feira");
+        break;
+    case 4:
+        printf("Quarta-feira");
+        break;
+    case 5:
+        printf("Quinta-feira");
+        break;
+    case 6:
+        printf("Sexta-feira");
+        break;
+    case 7:
+        printf("Sabado");
+        break;
+    }
+}
