@@ -1,0 +1,11 @@
+Estruturas de Repetição
+
+Linguagem C:
+while (<condição>) {
+bloco de comandos
+}
+
+Linguagem C:
+do {
+bloco de comandos
+} while (<condição>);
