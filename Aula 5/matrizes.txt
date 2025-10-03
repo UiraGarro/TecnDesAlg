@@ -1,0 +1,45 @@
+Matrizes
+
+Sintaxe:
+
+tipo variável[tam D1][tam D2] . . [tam DN];
+
+tipo = tipo do vetor
+variável = nome da variável
+
+[tam D1][tam D2] ..= dimensão da variável
+
+Manipulação de Matrizes
+
+exemplo:
+300 - 5 - 3
+4 - 10 - 3
+12 - 2 - 54
+
+acesso aos valores:
+    printf("%d", tabela[2][2]); ?
+    prinff("%d", tabela[0][1]); ?
+
+variável[tam D1][tam D2] . . [tam DN] = valor
+
+exemplo:
+#include <stdio.h>
+
+#define LINHAS 2
+#define COLUNAS 3
+
+int main(){
+    int matriz[LINHAS][COLUNAS] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    for(int linha=0; linha<LINHAS; linha++){
+        for(int coluna=0; coluna<COLUNAS; coluna++){
+            printf("%d ", matriz[linha][coluna]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
