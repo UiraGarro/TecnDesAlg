@@ -1,0 +1,79 @@
+Tipos de dados
+
+Escalares:
+    int - inteiro
+    float - real
+    double - real com maior precisão
+    char - caractere
+
+Arranjos (Vetores e Matrizes):
+    int vetor[10]; - vetor de inteiros com 10 posições
+    float matriz[3][4]; - matriz de reais com 3 linhas e 4 colunas
+    Variaveis de mesmo tipo 
+
+Registros ou estruturas:
+    Diversas variáveis de quaisquer tipos;
+    Agrupar informações relacionadas em uma mesma variável;
+    Criação de um nvo tipo de variável personalizado;
+    Orientação a Objetos (POO);
+    Exemplo:
+
+    struct nomeEstrutura {
+        tipo nomeVariavel1;
+        tipo nomeVariavel2;
+        ...
+        tipo nomeVariavelN;
+    }
+
+    "struct ponto" passa a ser um tipo:
+
+    #include <stdio.h>
+    struct ponto {
+        int x;
+        int y;
+    };
+
+    int main(){
+
+        struck ponto meuPonto;
+
+        meuPonto.x = 12;
+        meuPonto.y = 35;
+
+        printf("meu ponto x = %d\n", meuPonto.x);
+        printf("meu ponto y = %d\n", meuPonto.y);
+    }
+
+Registros
+Inicialização de estruturas na declaração:
+
+#include <stdio.h>
+
+typedef struct agenda {
+    char nome[50];
+    char telefone[15];
+    int idade;
+} Agenda;
+int main() {
+    Agenda contato1 = {"João Silva", "1234-5678", 30};
+    Agenda contato2 = {"Maria Souza", "9876-5432", 25};
+
+    printf("Contato 1: %s, %s, %d anos\n", contato1.nome, contato1.telefone, contato1.idade);
+    printf("Contato 2: %s, %s, %d anos\n", contato2.nome, contato2.telefone, contato2.idade);
+
+    return 0;
+}
+
+Vetores de registros:
+    Registros ou Estruturas permitem que o programador crie um novo tipo de dado,
+
+
+Exercício:
+
+1. Crie uma estrutura representando os alunos do curso de ADS. A estrutura deve conter a matríucla do aluno, nome, nota da 1º prova e nota da 2º prova.
+
+(a)Permita ao usuário entrar com os dados de 5 alunos.
+(b)Encontre o aluno com maior nota da primeira prova.
+(c)Encontre o aluno com maior nota geral(p1 + p2).
+(d)Encontre o aluno com menor media geral.
+(e)Para cada aluno, imprima a média geral e se ele foi aprovado ou reprovado. A média para aprovação é 6.0.
