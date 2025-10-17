@@ -1,0 +1,194 @@
+Alocação Estática
+Em linguagens de programação, a alocação estática refere-se ao processo de reservar memória para variáveis e estruturas de dados em tempo de compilação, antes da execução do programa. Isso significa que o tamanho e o local da memória são determinados quando o código é compilado, e não podem ser alterados durante a execução do programa.
+
+Alocação Dinamica
+Por outro lado, a alocação dinâmica ocorre em tempo de execução, permitindo que o programa solicite e libere memória conforme necessário. Isso é útil para estruturas de dados cujo tamanho pode variar durante a execução do programa, como listas ligadas, árvores e outros tipos de coleções.
+
+Ponteiros
+
+Ponteiros ou Apontadores são variáveis que armazenam endereços de memória de outras variáveis. 
+
+Os ponteiros estão entre os aspectos do C mais difíceis de dominar.
+
+Os ponteiros permitem programas a manipular diretamente a memória, o que pode levar a um código mais eficiente e flexível.
+
+Declaração:
+
+TipoVariavel *nome;
+
+O tipo pode ser qualquer tipo na linguagem C, além dos tipos definidos pelo usuário, como vetores e estruturas,
+ 
+int, char, floar, double, void
+
+Ponteiro void significa um ponteiro genérico que pode ser convertido para qualquer tipo.
+
+Operadores:
+
+& - Obtém o endereço de uma variável;
+
+* - Obtém o valor da variável apontada por um ponteiro;
+
+Exemplo:
+
+int y  5;
+int *yPtr;
+yPtr = &y;
+
+A instrução atribui o endereço da variável y à variável de ponteiro yPtr. Diz-se que a variável yPtr aponta para y.
+
+Exemplo2:
+
+#include <stdio.h>
+
+int main(){
+    int x = 15;
+    int y;
+    int *xPtr;
+
+    xPtr = &x;
+
+    y = *xPtr;
+
+    printf("endereço de x = %p\n", xPtr);
+    printf("endereço de xPtr = %p\n", &xPtr);
+    printf("O valor de xPtr = %p\n", xPtr);
+    printf("valor apontado por xPtr = %d\n", *xPtr);
+    printf("valor de y = %d\n", y);
+
+    x = 100;
+
+    printf("endereço de x = %p\n", xPtr);
+    printf("endereço de xPtr = %p\n", &xPtr);
+    printf("valor apontado por xPtr = %d\n", *xPtr);
+    printf("valor de y = %d\n", y);
+
+    return 0;
+}
+
+Há três valores que podem ser usados para inicializar um ponteiro: 0, NULL ou um endereço
+
+Inicializar um ponteiro com 0 e inicializar o mesmo ponteiro com NULL sao procedimentos equivalentes.
+
+Aritmética de Ponteiros:
+Adição e Subtração
+    O ponteiro é somado ou subtraído em blocos do tamanho do seu tipo
+
+um ponteiro inteiro,p1, aponta para a posição 2000 na memória.
+p1++, faz com que o ponteiro aponte para a posição 2004, assumindo que um inteiro ocupa 4 bytes.
+p1--, faz com que o ponteiro aponte para a posição 1996.
+p1 = p1 + 3, faz com que o ponteiro aponte para a posição 2012.
+
+Tarefa:
+
+#include <stdio.h>
+
+int main(){
+    int inteira = 10
+    float real = 2.5f;
+    char caractere = 'a';
+
+    int *inteiraPtr;
+    float *realPtr;
+    char *caracterePtr;
+}
+
+Ponteiros e vetores
+Relação estreita;
+
+Admita que o array int v[10] foi declarado e seu primeiro elemento se encontra no local 3000 na memória.
+
+vPtr = v; ou vPtr= &v[0];
+
+O elemento v[2] do array pode ser referenciado com a expressão de ponteiro *(vPtr + 2);
+
+Os ponteiros podem possuir subscritos exatamente da mesma forma que os arrays.
+vPtr[2] é equivalente a *(vPtr + 2);
+
+Ponteiros para ponteiros:
+Quando um ponteiro aponta para outro ponteiro;
+Pode haver diversos níveis de multiplos apontamentos;
+
+Pode ser feita uma analogia entre o nível de apontamento e o número de estrelas na declaração do ponteiro.
+
+Alocação Estática:
+Variáveis locais, globais, matrizes, e estruturas.
+
+Exige que o programador saiba o tamanho necessário em tempo de compilação;
+O espaço de memória é liberado automaticamente quando a variável sai do escopo;
+
+Exemplo:sem ponteiros
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int tam, i;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &tam);
+
+    int vet[tam];
+
+    for (i=0; i<tam; i++){
+        printf("Digite o numero %d: ", i+1);
+        scanf("%d", &vet[i]);
+    }
+    printf("Elementos do vetor:\n");
+    for (i=0; i<tam; i++){
+        printf("%d ", vet[i]);
+    }
+}
+
+Alocação Dinâmica:
+
+Funcão malloc()
+Assinatura: "void *malloc(size_t size);"
+size_t =~int
+Aloca uma área de memória de tamanho size;
+Retorna um ponteiro para essa área de memorória. Ponteiro para o primeiro byte da região alocada.
+Se não houver memória suficiente, retorna NULL;
+
+exemplo:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    int *vetor = (int *) malloc(sizeof(int)*10); //void *
+    for(int i=0; i<10; i++){
+        vetor[i] = 0;
+    }
+    int *vetor2 = (int *) calloc(10, sizeof(int)); //void *
+
+    realloc(vetor, sizeof(int)*20); //realocar a memoria de um det ponteiro
+    vetor[0] = 1;
+    vetor[1] = 2;
+    vetor[2] = 3;
+    vetor[3] = 4;
+    
+    printf("vetor[0] = %d\n", vetor[0]);
+    printf("vetor[1] = %d\n", vetor[1]);
+    printf("vetor[2] = %d\n", vetor[2]);
+    printf("vetor[3] = %d\n", vetor[3]);
+    printf("vetor[4] = %d\n", vetor[4]);
+    printf("vetor[5] = %d\n", vetor[5]);
+    printf("vetor[6] = %d\n", vetor[6]);
+    printf("vetor[7] = %d\n", vetor[7]);
+    
+    return 0;
+
+}
+
+Função free()
+Assinatura: "void free (void *ptr);"
+Libera uma área de memória previamente alocada por malloc();
+
+Matrizes Dinâmicas
+
+Vantagens do uso de ponteiros e alocação dinâmica:
+Permite a criação de estruturas de dados cujo tamanho pode variar durante a execução do programa;
+Pode levar a um uso mais eficiente da memória, já que a memória é alocada conforme a necessidade;
+Facilita a implementação de estruturas de dados complexas, como listas ligadas, árvores e grafos.
+Desvantagens:
+Requer um gerenciamento cuidadoso da memória para evitar vazamentos de memória e corrupção de dados;
+Pode introduzir complexidade adicional no código, tornando-o mais difícil de entender e manter;
+Erros relacionados a ponteiros, como desreferenciamento de ponteiros nulos ou inválidos, podem levar a falhas de execução do programa.
