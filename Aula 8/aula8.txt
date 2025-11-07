@@ -1,0 +1,102 @@
+Funções
+
+Introdução:
+
+Criar programas estruturados;
+Dividir as grandes tarefas de computação em tarefas menores;
+Utilizar resultados parciais para compor o resultado;
+
+inicio
+    instrução
+    subprograma1()
+    instrução
+    subprograma2()
+fim
+
+subprograma3()
+    instrução
+    subprograma3()
+    return
+fim
+
+Forma Geral
+
+tipo_retorno nome (lista de parametros){
+    //corpo da função
+}  
+
+Definindo Funções
+
+int main(){
+    //corpo da função main
+    return 0;
+}
+
+int main(int argc, char *argv[]){
+    //corpo da função main
+    return 0;
+}
+
+int soma(int x, int y){
+    int res;
+    res = x + y;
+    return res;
+}
+
+float media(float num1, float num2){
+    res = (num1 + num2) / 2;
+}
+
+int pot(int base, int expoente){
+    int res = 1;
+    for(int i = 0; i < expoente; i++){
+        res = res * base;
+    }
+    return res;
+}
+
+Escopo 
+
+int z = 10; //variável global
+
+int maior(int a, int b){
+    int maior; //variável local
+    if(a > b){
+        maior = a;
+    }else{
+        maior = b;
+    }
+    return maior;
+}
+
+int main(){
+    int b = 5;
+    printf("maior: %d\n", maior(z, b));
+}
+
+int x = 10; //variável global
+
+int main(){
+    int x = 15;
+    printf("x = %d\n", x);
+}
+
+typedef struct pessoa{
+    int peso;
+    int idade;
+} Pessoa;
+
+void imprimePessoa(Pessoa p){
+    printf("Peso: %d\n", p.peso);
+    printf("Idade: %d\n", p.idade);
+}
+
+void imprimePessoaPorReferencia(Pessoa *p){
+    printf("Peso: %d\n", p->peso);
+    printf("Idade: %d\n", p->idade);
+}
+
+int main(){
+    Pessoa pessoa1 = {50, 100};
+    return 0;
+}
